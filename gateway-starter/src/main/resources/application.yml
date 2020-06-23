@@ -1,0 +1,25 @@
+## 服务器端口号
+server:
+  shutdown:
+    timeout: 10
+## 关于数据库参数的相关配置
+spring:
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
+  main:
+    banner-mode: "console"
+
+mgateway:
+  gatewayPort: ${server.port:7044}
+  printStaic: false
+  dubbo:
+    application: mgateway
+    addr: ${NACOS_SERVER}
+    protocol: nacos
+    retry: 0
+    timeout: 3000
+  db:
+    token: ${TOKEN}
+    activeNum: 2
+
+

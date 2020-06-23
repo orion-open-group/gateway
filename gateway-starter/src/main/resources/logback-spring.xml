@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
+
+    <if condition='property("env_name").contains("dev")'>
+        <then>
+            <property name="LOG_HOME" value="${user.dir}${file.separator}logs" />
+        </then>
+        <else>
+            <property name="LOG_HOME" value="${app.log.dir}" />
+        </else>
+    </if>
+
+    <property name="LOG_LEVEL" value="info"/>
+    <property name="SQL_LOG_LEVEL" value="DEBUG"/>
+
+    <!-- 控制台输出 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{30} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="framework" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${LOG_HOME}/business/framework-server.log</File><!--不指定会出现Linux无法输出文件-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <FileNamePattern>${LOG_HOME}/business/framework.%d{yyyy-MM-dd}.%i.log</FileNamePattern>
+            <!-- keep 30 days' worth of history -->
+            <maxHistory>30</maxHistory>
+            <maxFileSize>100MB</maxFileSize>
+        </rollingPolicy>
+        <append>true</append>
+        <encoder>
+            <Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg %n</Pattern>
+        </encoder>
+    </appender>
+    <appender name="businessLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${LOG_HOME}/business/mgateway-server.log</File><!--不指定会出现Linux无法输出文件-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <FileNamePattern>${LOG_HOME}/business/mgateway-server.%d{yyyy-MM-dd}.%i.log</FileNamePattern>
+            <!-- keep 30 days' worth of history -->
+            <maxHistory>30</maxHistory>
+            <maxFileSize>100MB</maxFileSize>
+        </rollingPolicy>
+        <append>true</append>
+        <encoder>
+            <Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg %n</Pattern>
+        </encoder>
+    </appender>
+
+
+    <logger name="org.apache.ibatis" level="${SQL_LOG_LEVEL}"/>
+    <logger name="java.sql.Connection" level="${SQL_LOG_LEVEL}"/>
+    <logger name="java.sql.Statement" level="${SQL_LOG_LEVEL}"/>
+    <logger name="java.sql.PreparedStatement" level="${SQL_LOG_LEVEL}"/>
+    <logger name="com.alibaba.druid" level="${SQL_LOG_LEVEL}"/>
+    <logger name="com.netflix" level="INFO"/>
+    <logger name="io.netty" level="WARN"/>
+    <logger name="zuul" level="WARN"/>
+
+    <root level="${LOG_LEVEL}">
+        <if condition='property("env_name").contains("dev") '>
+            <then>
+                <appender-ref ref="STDOUT"/>
+                <appender-ref ref="framework"/>
+            </then>
+            <else>
+                <appender-ref ref="STDOUT"/>
+                <appender-ref ref="framework"/>
+            </else>
+        </if>
+    </root>
+
+</configuration>
