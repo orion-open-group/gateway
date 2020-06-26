@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.orion</groupId>
-        <artifactId>gateway-server-parent</artifactId>
-        <version>1.0.2</version>
+        <artifactId>gateway-parent</artifactId>
+        <groupId>com.orion.gateway</groupId>
+        <version>1.0.0</version>
     </parent>
 
     <artifactId>gateway-server</artifactId>
@@ -33,15 +33,15 @@
             <version>2.9.8</version>
         </dependency>
         <dependency>
-            <groupId>com.orion</groupId>
+            <groupId>com.orion.gateway</groupId>
             <artifactId>gateway-spring-local-invoke</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.orion</groupId>
+            <groupId>com.orion.gateway</groupId>
             <artifactId>gateway-dubbo-invoke</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.orion</groupId>
+            <groupId>com.orion.gateway</groupId>
             <artifactId>gateway-dao</artifactId>
         </dependency>
         <dependency>
@@ -54,12 +54,8 @@
         </dependency>
 
         <dependency>
-            <groupId>com.orion</groupId>
+            <groupId>com.orion.gateway</groupId>
             <artifactId>gateway-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.orion</groupId>
-            <artifactId>orion-common</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>

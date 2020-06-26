@@ -1,7 +1,7 @@
 package com.orion.mobile.gateway.util;
 
 import com.google.common.collect.Maps;
-import com.orion.logger.BusinessLoggerFactory;
+import org.slf4j.LoggerFactory;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.RegExUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -14,7 +14,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.Function;
 
 public class DataTypeTranslator {
-	private static final Logger log = BusinessLoggerFactory.getBusinessLogger(DataTypeTranslator.class);
+	private static final Logger log = LoggerFactory.getLogger(DataTypeTranslator.class);
 	// QqAw1eZrWt2ySuXi3oEpDa4sCdRf5gFhVj6kTlGz7xBcYv8bHnNm9UJ0MI_KO$LP // base 64
 	private static final String BIG_ENDIAN_RAINBOW = "qa9zw2sx8ed7cr1fv5tg4by3hn6uj0mi"; // base 32
 	private static final char[] rainbowChars = BIG_ENDIAN_RAINBOW.toCharArray();

@@ -6,7 +6,7 @@ import com.google.inject.Singleton;
 import com.netflix.zuul.context.SessionContext;
 import com.netflix.zuul.filters.http.HttpInboundSyncFilter;
 import com.netflix.zuul.message.http.HttpRequestMessage;
-import com.orion.logger.BusinessLoggerFactory;
+import org.slf4j.LoggerFactory;
 import com.orion.mobile.gateway.exception.GatewayException;
 import com.orion.mobile.gateway.util.GatewayConstants;
 import io.netty.handler.codec.http.HttpMethod;
@@ -22,7 +22,7 @@ import org.slf4j.Logger;
  */
 @Singleton
 public class BusinessInvokeFilter extends HttpInboundSyncFilter {
-    private Logger logger = BusinessLoggerFactory.getBusinessLogger("GATEWAY", BusinessInvokeFilter.class);
+    private Logger logger = LoggerFactory.getLogger(BusinessInvokeFilter.class);
 
     @Override
     public int filterOrder() {

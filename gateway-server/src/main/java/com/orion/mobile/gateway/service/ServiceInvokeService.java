@@ -6,7 +6,7 @@ import com.google.common.collect.Maps;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import com.google.inject.name.Named;
-import com.orion.logger.BusinessLoggerFactory;
+import org.slf4j.LoggerFactory;
 import com.orion.mobile.gateway.domain.ReturnConfig;
 import com.orion.mobile.gateway.domain.RpcServiceInfo;
 import com.orion.mobile.gateway.domain.RpcServiceMethodInfo;
@@ -26,7 +26,7 @@ import java.util.*;
  */
 @Singleton
 public class ServiceInvokeService {
-    private Logger logger = BusinessLoggerFactory.getBusinessLogger("GATEWAY", ServiceInvokeService.class);
+    private Logger logger = LoggerFactory.getLogger(ServiceInvokeService.class);
 
     @Inject
     ServiceDefineCacheService serviceDefineCacheService;

@@ -1,7 +1,7 @@
 package com.orion.mobile.gateway;
 
 import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties;
-import com.orion.logger.BusinessLoggerFactory;
+import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -20,7 +20,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 @EnableAspectJAutoProxy(proxyTargetClass = true)
 @ComponentScan(basePackages = "com.orion")
 public class MobileGatewayStarter {
-    private static Logger logger = BusinessLoggerFactory.getBusinessLogger(MobileGatewayStarter.class);
+    private static Logger logger = LoggerFactory.getLogger(MobileGatewayStarter.class);
 
     public static void main(String[] args) throws Exception {
         logger.info("server starter");

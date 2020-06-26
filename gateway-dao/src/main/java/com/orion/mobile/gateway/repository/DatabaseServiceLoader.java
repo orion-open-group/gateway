@@ -7,7 +7,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.google.common.collect.Lists;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import com.orion.logger.BusinessLoggerFactory;
+import org.slf4j.LoggerFactory;
 import com.orion.mobile.gateway.domain.FieldDefinition;
 import com.orion.mobile.gateway.domain.ReturnConfig;
 import com.orion.mobile.gateway.domain.RpcServiceInfo;
@@ -34,7 +34,7 @@ import java.util.concurrent.TimeUnit;
 @Singleton
 public class DatabaseServiceLoader implements ServiceLoader {
 
-    private Logger logger = BusinessLoggerFactory.getBusinessLogger("GATEWAY", DatabaseServiceLoader.class);
+    private Logger logger = LoggerFactory.getLogger(DatabaseServiceLoader.class);
 
     @Inject
     DruidDataSource druidDataSource;

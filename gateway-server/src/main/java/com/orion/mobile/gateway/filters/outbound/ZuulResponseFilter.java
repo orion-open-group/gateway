@@ -4,12 +4,12 @@ import com.google.inject.Singleton;
 import com.netflix.zuul.context.SessionContext;
 import com.netflix.zuul.filters.http.HttpOutboundSyncFilter;
 import com.netflix.zuul.message.http.HttpResponseMessage;
-import com.orion.logger.BusinessLoggerFactory;
+import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
 
 @Singleton
 public class ZuulResponseFilter extends HttpOutboundSyncFilter {
-    private static final Logger log = BusinessLoggerFactory.getBusinessLogger(ZuulResponseFilter.class);
+    private static final Logger log = LoggerFactory.getLogger(ZuulResponseFilter.class);
 
     @Override
     public int filterOrder() {

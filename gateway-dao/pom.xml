@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.orion</groupId>
-        <artifactId>gateway-server-parent</artifactId>
-        <version>1.0.2</version>
+        <groupId>com.orion.gateway</groupId>
+        <artifactId>gateway-parent</artifactId>
+        <version>1.0.0</version>
     </parent>
 
     <artifactId>gateway-dao</artifactId>
@@ -25,12 +25,8 @@
         </dependency>
 
         <dependency>
-            <groupId>com.orion</groupId>
+            <groupId>com.orion.gateway</groupId>
             <artifactId>gateway-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.orion</groupId>
-            <artifactId>orion-common</artifactId>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -96,11 +92,11 @@
             <groupId>org.slf4j</groupId>
             <artifactId>log4j-over-slf4j</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.codehaus.janino</groupId>
-            <artifactId>janino</artifactId>
-        </dependency>
 
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
         <dependency>
             <groupId>commons-configuration</groupId>
             <artifactId>commons-configuration</artifactId>

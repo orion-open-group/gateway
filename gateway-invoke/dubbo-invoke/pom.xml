@@ -3,14 +3,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.orion</groupId>
+        <groupId>com.orion.gateway</groupId>
         <artifactId>gateway-invoke-parent</artifactId>
-        <version>1.0.2</version>
+        <version>1.0.0</version>
     </parent>
 
-    <groupId>com.orion</groupId>
     <artifactId>gateway-dubbo-invoke</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <name>gateway-dubbo-invoke</name>
@@ -25,24 +24,22 @@
         </dependency>
 
         <dependency>
-            <groupId>com.orion</groupId>
+            <groupId>com.orion.gateway</groupId>
             <artifactId>gateway-param</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo-registry-nacos</artifactId>
+            <version>2.7.5</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba.nacos</groupId>
             <artifactId>nacos-client</artifactId>
+            <version>1.0.0-RC3</version>
         </dependency>
         <dependency>
-            <groupId>com.orion</groupId>
+            <groupId>com.orion.gateway</groupId>
             <artifactId>gateway-dao</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.orion</groupId>
-            <artifactId>orion-common</artifactId>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -56,10 +53,20 @@
         <dependency>
             <groupId>com.netflix.archaius</groupId>
             <artifactId>archaius-core</artifactId>
+            <version>2.0.0-rc.7</version>
         </dependency>
         <dependency>
             <groupId>commons-configuration</groupId>
             <artifactId>commons-configuration</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo</artifactId>
+            <version>2.7.5</version>
+        </dependency>
+        <dependency>
+            <groupId>com.netflix.archaius</groupId>
+            <artifactId>archaius-core</artifactId>
         </dependency>
 
     </dependencies>

@@ -1,7 +1,7 @@
 package com.orion.mobile.gateway.service;
 
 import com.google.inject.Singleton;
-import com.orion.logger.BusinessLoggerFactory;
+import org.slf4j.LoggerFactory;
 import org.apache.commons.lang3.concurrent.BasicThreadFactory;
 import org.slf4j.Logger;
 
@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
  */
 @Singleton
 public class ScheduleService {
-    private Logger logger = BusinessLoggerFactory.getBusinessLogger("MGATEWAY", ScheduleService.class);
+    private Logger logger = LoggerFactory.getLogger( ScheduleService.class);
 
     ScheduledThreadPoolExecutor schedule = null;
 

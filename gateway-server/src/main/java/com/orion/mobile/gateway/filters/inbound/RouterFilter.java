@@ -8,7 +8,7 @@ import com.netflix.zuul.filters.FilterType;
 import com.netflix.zuul.filters.ZuulFilter;
 import com.netflix.zuul.filters.http.HttpInboundSyncFilter;
 import com.netflix.zuul.message.http.HttpRequestMessage;
-import com.orion.logger.BusinessLoggerFactory;
+import org.slf4j.LoggerFactory;
 import com.orion.mobile.gateway.filters.endpoint.ExceptionEndpoint;
 import com.orion.mobile.gateway.filters.endpoint.NoMatchEndpoint;
 import com.orion.mobile.gateway.filters.endpoint.OperationEndPoint;
@@ -27,7 +27,7 @@ import java.util.List;
 @Singleton
 public class RouterFilter extends HttpInboundSyncFilter {
 
-    private Logger logger = BusinessLoggerFactory.getBusinessLogger("GATEWAY", RouterFilter.class);
+    private Logger logger = LoggerFactory.getLogger(RouterFilter.class);
 
     @Override
     public int filterOrder() {

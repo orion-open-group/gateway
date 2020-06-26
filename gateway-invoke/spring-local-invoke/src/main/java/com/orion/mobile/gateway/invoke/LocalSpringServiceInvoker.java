@@ -5,14 +5,14 @@ import com.alibaba.fastjson.JSONObject;
 import com.google.common.collect.Maps;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import com.orion.logger.BusinessLoggerFactory;
+import com.orion.mobile.gateway.util.UUIDUtils;
+import org.slf4j.LoggerFactory;
 import com.orion.mobile.gateway.domain.RpcServiceInfo;
 import com.orion.mobile.gateway.domain.RpcServiceMethodInfo;
 import com.orion.mobile.gateway.service.ServiceParamBuildService;
 import com.orion.mobile.gateway.spring.GatewaySpringContextUtils;
 import com.orion.mobile.gateway.util.InvokeParamContext;
 import com.orion.mobile.gateway.util.LocalParam;
-import com.orion.util.UUIDUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.reflect.MethodUtils;
 import org.apache.commons.lang3.tuple.Pair;
@@ -32,7 +32,7 @@ import java.util.Map;
 @Singleton
 public class LocalSpringServiceInvoker implements ServiceInvoker {
 
-    private static Logger logger = BusinessLoggerFactory.getBusinessLogger(LocalSpringServiceInvoker.class);
+    private static Logger logger = LoggerFactory.getLogger(LocalSpringServiceInvoker.class);
     Map<String, Pair<Long, LocalServiceTarget>> serviceMap = Maps.newConcurrentMap();
 
     @Inject

@@ -2,7 +2,7 @@ package com.orion.mobile.gateway.module;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.name.Names;
-import com.orion.logger.BusinessLoggerFactory;
+import org.slf4j.LoggerFactory;
 import com.orion.mobile.gateway.invoke.ServiceInvoker;
 import com.orion.mobile.gateway.service.ServiceParamBuildService;
 import org.slf4j.Logger;
@@ -16,7 +16,7 @@ import java.util.ServiceLoader;
  * @Version 1.0.0
  */
 public class InvokerModule extends AbstractModule {
-    private static Logger logger = BusinessLoggerFactory.getBusinessLogger(InvokerModule.class);
+    private static Logger logger = LoggerFactory.getLogger(InvokerModule.class);
 
     @Override
     protected void configure() {

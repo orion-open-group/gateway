@@ -2,7 +2,7 @@ package com.orion.mobile.gateway.autoconfig;
 
 import com.netflix.config.ConfigurationManager;
 import com.orion.mobile.gateway.domain.MGatewayConfig;
-import com.orion.logger.BusinessLoggerFactory;
+import org.slf4j.LoggerFactory;
 import com.orion.mobile.gateway.server.GatewayBootstrap;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +22,7 @@ import java.util.Properties;
 @EnableConfigurationProperties(MGatewayConfig.class)
 public class MGatwayAutoconfig {
 
-    private Logger logger = BusinessLoggerFactory.getBusinessLogger(MGatwayAutoconfig.class);
+    private Logger logger = LoggerFactory.getLogger(MGatwayAutoconfig.class);
     @Autowired
     private MGatewayConfig mGatewayConfig;
 

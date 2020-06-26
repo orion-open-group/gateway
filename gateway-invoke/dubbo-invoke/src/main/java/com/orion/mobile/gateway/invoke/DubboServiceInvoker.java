@@ -5,12 +5,12 @@ import com.alibaba.fastjson.JSONObject;
 import com.google.common.collect.Maps;
 import com.google.inject.Inject;
 import com.netflix.config.ConfigurationManager;
-import com.orion.logger.BusinessLoggerFactory;
+import com.orion.mobile.gateway.util.UUIDUtils;
+import org.slf4j.LoggerFactory;
 import com.orion.mobile.gateway.domain.RpcServiceInfo;
 import com.orion.mobile.gateway.domain.RpcServiceMethodInfo;
 import com.orion.mobile.gateway.service.ServiceParamBuildService;
 import com.orion.mobile.gateway.util.GatewayConstants;
-import com.orion.util.UUIDUtils;
 import org.apache.commons.configuration.AbstractConfiguration;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Pair;
@@ -32,7 +32,7 @@ import java.util.*;
  */
 public class DubboServiceInvoker implements ServiceInvoker {
 
-    private Logger logger = BusinessLoggerFactory.getBusinessLogger("GATEWAY", DubboServiceInvoker.class);
+    private Logger logger = LoggerFactory.getLogger(DubboServiceInvoker.class);
 
     Map<String, Pair<Long, GenericService>> serviceMap = Maps.newConcurrentMap();
 

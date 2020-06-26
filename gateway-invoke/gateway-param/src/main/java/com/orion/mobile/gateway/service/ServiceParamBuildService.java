@@ -3,7 +3,7 @@ package com.orion.mobile.gateway.service;
 import com.alibaba.fastjson.JSONObject;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.orion.logger.BusinessLoggerFactory;
+import org.slf4j.LoggerFactory;
 import com.orion.mobile.gateway.domain.FieldDefinition;
 import com.orion.mobile.gateway.domain.RpcServiceMethodInfo;
 import com.orion.mobile.gateway.util.DataTypeTranslator;
@@ -27,7 +27,7 @@ import java.util.stream.Collectors;
  * @Version 1.0.0
  */
 public class ServiceParamBuildService {
-    private Logger logger = BusinessLoggerFactory.getBusinessLogger("GATEWAY", ServiceParamBuildService.class);
+    private Logger logger = LoggerFactory.getLogger(ServiceParamBuildService.class);
     private Map<Long, Pair<Long, String[]>> paramTypeMap = Maps.newHashMap();
 
     /**

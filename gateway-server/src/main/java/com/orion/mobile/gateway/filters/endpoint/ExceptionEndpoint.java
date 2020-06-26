@@ -8,13 +8,13 @@ import com.netflix.zuul.message.http.HttpResponseMessage;
 import com.netflix.zuul.message.http.HttpResponseMessageImpl;
 import com.netflix.zuul.stats.status.StatusCategoryUtils;
 import com.netflix.zuul.stats.status.ZuulStatusCategory;
-import com.orion.logger.BusinessLoggerFactory;
+import org.slf4j.LoggerFactory;
 import com.orion.mobile.gateway.domain.GatewayResponse;
 import org.slf4j.Logger;
 
 @Singleton
 public class ExceptionEndpoint extends HttpSyncEndpoint {
-    private static final Logger logger = BusinessLoggerFactory.getBusinessLogger("GATEWAY", ExceptionEndpoint.class);
+    private static final Logger logger = LoggerFactory.getLogger(ExceptionEndpoint.class);
 
     @Override
     public HttpResponseMessage apply(HttpRequestMessage request) {

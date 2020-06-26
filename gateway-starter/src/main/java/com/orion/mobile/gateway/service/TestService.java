@@ -2,7 +2,7 @@ package com.orion.mobile.gateway.service;
 
 import com.alibaba.fastjson.JSON;
 import com.google.common.collect.Maps;
-import com.orion.logger.BusinessLoggerFactory;
+import org.slf4j.LoggerFactory;
 import org.apache.commons.lang3.reflect.MethodUtils;
 import org.slf4j.Logger;
 import org.springframework.stereotype.Component;
@@ -22,7 +22,7 @@ import java.util.Set;
 @Component
 public class TestService {
 
-    private static Logger logger = BusinessLoggerFactory.getBusinessLogger(TestService.class);
+    private static Logger logger = LoggerFactory.getLogger(TestService.class);
 
     public Map testMap(int age, Map<String, SubP> subP) {
         logger.info("testMap {} {}  {}", age, subP);

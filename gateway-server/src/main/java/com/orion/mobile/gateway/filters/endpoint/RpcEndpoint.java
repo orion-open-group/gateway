@@ -14,7 +14,7 @@ import com.netflix.zuul.message.http.HttpResponseMessage;
 import com.netflix.zuul.message.http.HttpResponseMessageImpl;
 import com.netflix.zuul.stats.status.StatusCategoryUtils;
 import com.netflix.zuul.stats.status.ZuulStatusCategory;
-import com.orion.logger.BusinessLoggerFactory;
+import org.slf4j.LoggerFactory;
 import com.orion.mobile.gateway.domain.GatewayResponse;
 import com.orion.mobile.gateway.domain.ServiceInstance;
 import com.orion.mobile.gateway.domain.StaticInfo;
@@ -34,7 +34,7 @@ import java.util.concurrent.TimeUnit;
 
 @Singleton
 public class RpcEndpoint extends HttpSyncEndpoint {
-    private static final Logger log = BusinessLoggerFactory.getBusinessLogger("GATEWAY", RpcEndpoint.class);
+    private static final Logger log = LoggerFactory.getLogger(RpcEndpoint.class);
 
     @Inject
     ServiceDefineCacheService serviceDefineCacheService;

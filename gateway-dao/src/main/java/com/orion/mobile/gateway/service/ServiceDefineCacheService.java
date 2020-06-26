@@ -1,7 +1,6 @@
 package com.orion.mobile.gateway.service;
 
 import com.alibaba.fastjson.JSON;
-import com.orion.logger.BusinessLoggerFactory;
 import com.google.common.collect.Maps;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
@@ -13,6 +12,7 @@ import com.orion.mobile.gateway.repository.ServiceLoader;
 import com.orion.mobile.gateway.listener.ServiceListener;
 import org.apache.commons.collections4.CollectionUtils;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
@@ -33,7 +33,7 @@ public class ServiceDefineCacheService {
     ServiceLoader serviceLoader;
     Map<String, Map<String, RpcServiceInfo>> rpcServiceInfoMap = Maps.newConcurrentMap();
     Map<Long, Map<String, RpcServiceMethodInfo>> rpcServiceMethodInfoMap = Maps.newConcurrentMap();
-    private Logger logger = BusinessLoggerFactory.getBusinessLogger("GATEWAY", ServiceDefineCacheService.class);
+    private Logger logger = LoggerFactory.getLogger(ServiceDefineCacheService.class);
 
     @PostConstruct
     public void initServiceAndMethod() throws Exception {

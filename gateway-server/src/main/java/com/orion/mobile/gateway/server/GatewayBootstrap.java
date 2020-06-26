@@ -8,7 +8,7 @@ import com.netflix.governator.InjectorBuilder;
 import com.netflix.zuul.filters.ZuulFilter;
 import com.netflix.zuul.netty.server.BaseServerStartup;
 import com.netflix.zuul.netty.server.Server;
-import com.orion.logger.BusinessLoggerFactory;
+import org.slf4j.LoggerFactory;
 import com.orion.mobile.gateway.module.GatewayModule;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -29,7 +29,7 @@ import java.util.concurrent.TimeUnit;
 @Singleton
 public class GatewayBootstrap {
 
-    private Logger logger = BusinessLoggerFactory.getBusinessLogger("GATEWAY", GatewayBootstrap.class);
+    private Logger logger = LoggerFactory.getLogger(GatewayBootstrap.class);
 
     public Server buildServer() throws Exception {
         long startTime = System.currentTimeMillis();
